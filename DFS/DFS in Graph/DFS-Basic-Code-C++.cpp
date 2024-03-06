@@ -1,32 +1,41 @@
-/* BISMILLAHIR RAHMANIR RAHIM */
+/** BISMILLAHIR RAHMANIR RAHIM
+   Author: Hamed Hasan/PUC
+  -> How to DFS in a Tree
+  -> Time Complexity: O(V+E)
+  -> DS used: 2D vector
+**/
+
 #include <bits/stdc++.h>
 using namespace std;
 int const N=1e5+10;
 vector <int> g[N];
 bool vis[N];
 
-void dfs(int vertex){  // recursion function Q: TC of these 4 section
-   /** Take action on vertex after entering
-      the vertex
-   **/
-   if (vis[vertex]) return;
+void dfs(int vertex){  // recursion function Q: TC of these 4 section?
+       /**
+        section 1: Take action on vertex after entering the vertex
+       **/
+   if (vis[vertex]) return;  /** basic Graph Logic **/
+   vis[vertex] = true;       /** basic Graph Logic **/
+
    cout << vertex << endl;
-   vis[vertex] = true;
+
    for (int child : g[vertex]){
-       cout << "parent " << vertex << ", child " << child << endl;
-        if (vis[child]) continue;
-        /** Take action on child before
-           entering the child node
+     cout << "parent " << vertex << ", child " << child << endl;
+     if (vis[child]) continue;
+
+        /**
+        section 2: Take action on child before entering the child node
         **/
-       dfs(child);
-       /** Take action on child
-         after exiting child node
-         i.e. when u reach the end (leaf node)
+
+     dfs(child);
+        /**
+         section 3: Take action on child after exiting child node i.e. when u reach the end (leaf node)
         **/
    }
-   /** Take action on vertex before
-      exiting the vertex
-    **/
+       /**
+        section 3: Take action on vertex before exiting the vertex
+       **/
 }
 
 int main(){
@@ -38,6 +47,7 @@ int main(){
     g[v2].push_back(v1);
     t = v1;
    }
+
    dfs(t);
 }
 

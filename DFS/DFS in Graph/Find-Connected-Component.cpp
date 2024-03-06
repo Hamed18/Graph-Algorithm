@@ -1,4 +1,9 @@
-// find how many connected component in graph and display
+/**
+  BISMILLAHIR RAHMANIR RAHIM
+  Author: Hamed Hasan
+  -> find how many connected component in graph and display
+**/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -45,12 +50,12 @@ int main(){
 }
 
 /*
-8 5
+8 5  // no of nodes = 8;  no of edges = 5
 1 2
 2 3
 2 4
 3 5
-6 7
+6 7  // no 8 in adj list means 8 is not connected to any other node
 output:
 3
 1 2 3 5 4
