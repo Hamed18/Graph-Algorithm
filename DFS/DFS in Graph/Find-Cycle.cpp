@@ -1,4 +1,10 @@
-// find cycle in graph using dfs
+/** BISMILLAHIR RAHMANIR RAHIM
+   Author: Hamed Hasan/PUC
+  -> find cycle in graph using dfs
+  -> Time Complexity: O(V+E)
+  -> if any one child of a vertex is already visited, then it creates a cycle
+**/
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -10,12 +16,14 @@ vector <vector <int> > cc;
 vector <int> current_cc;
 
 bool dfs(int vertex, int par){
-     vis[vertex] = true;
+     vis[vertex] = true;    /**  Basic DFS-Graph Logic **/
      bool isLoopExists = false;
+
      for (int child : v[vertex]){
-        if (vis[child] && child == par) continue;
-        if (vis[child]) return true;
-        isLoopExists |= dfs(child,vertex);  // if any one child is already visited, then it will be true
+        if (vis[child] && child == par) continue;  /**  Basic DFS-Graph-Cycle Logic **/
+        if (vis[child]) return true;   /**  Basic DFS-Graph-Cycle Logic **/
+
+        isLoopExists = isLoopExists || dfs(child,vertex);  // if out of all child, any one child is already visited, then OR operation will return True
      }
      return isLoopExists;
 }
@@ -33,12 +41,13 @@ int main(){
     bool isLoopExists = false;
     for (int i=1; i<=n; i++){
         if (vis[i]) continue;
-        if (dfs(i,0)){
+        if ( dfs(i,0) ){   // if dfs() function return True ..
             isLoopExists = true;
             break;
         }
     }
     cout << isLoopExists;
+
 }
 
 /*
