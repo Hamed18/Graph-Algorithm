@@ -15,8 +15,8 @@ void dfs(int vertex){  // recursion function Q: TC of these 4 section?
        /**
         section 1: Take action on vertex after entering the vertex
        **/
-   if (vis[vertex]) return;  /** basic Graph Logic **/
-   vis[vertex] = true;       /** basic Graph Logic **/
+   if (vis[vertex]) return;  /** basic DFS-Graph Logic **/
+   vis[vertex] = true;       /** basic DFS-Graph Logic **/
 
    cout << vertex << endl;
 
