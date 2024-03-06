@@ -35,7 +35,7 @@ void dfs(int vertex){  // recursion function Q: TC of these 4 section?
    }
 
        /**
-        section 3: Take action on vertex before exiting the vertex  i.e. when it reach the end (leaf node)
+        section 4: Take action on vertex before exiting the vertex  i.e. when it reach the end (leaf node)
         **/
 }
 
